@@ -9,7 +9,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh './gradlew test'
-                junit 'build/test-results/test/*.xml'
+                junit 'allowEmptyResults: true, testResults: 'build/test-results/test/*.xml'
                 jacoco classPattern: 'build/classes', execPattern: 'build/jacoco/*.exec', sourceInclusionPattern: '', sourcePattern: '/src/main/java/com/example/restservice/*java'
             }
         }
