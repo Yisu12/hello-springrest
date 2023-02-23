@@ -6,6 +6,12 @@ pipeline {
     }
 
     stages {
+        stage('Test') {
+            steps {
+                sh './gradlew test'
+                junit 'build/test-results/test/*.xml'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'docker-compose build'
