@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.31.0" timestamp="2023-02-23T10:39:28.698">
+<file name="/home/sinensia/hello-springrest/src/main/java/com/example/restservice/GreetingController.java">
+<violation beginline="13" endline="13" begincolumn="27" endcolumn="33" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.example.restservice" class="GreetingController" variable="counter" externalInfoUrl="https://pmd.github.io/pmd-6.31.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+</file>
+</pmd>

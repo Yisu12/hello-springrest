@@ -9,8 +9,10 @@ pipeline {
         stage('Test') {
             steps {
                 sh './gradlew test'
+                sh './gradlew check'
                 junit allowEmptyResults: true, testResults: 'build/test-results/test/*.xml'
                 jacoco classPattern: 'build/classes', execPattern: 'build/jacoco/*.exec', sourceInclusionPattern: '', sourcePattern: '/src/main/java/com/example/restservice/*java'
+                recordIssues(tools: [pmdParser(pattern: 'build/reports/pmd/*.xml')])
             }
         }
         stage('Build') {
