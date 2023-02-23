@@ -18,6 +18,7 @@ pipeline {
                 sh './gradlew check'
                 recordIssues(tools: [pmdParser(pattern: 'build/reports/pmd/*.xml')])
                 sh 'trivy fs -f json -o results.json .'
+                sh 'trivy image -f json -o docker_results.json ghcr.io/yisu12/hello-springrest:latest'
                 recordIssues(tools: [trivy(pattern: 'results.json')])
             }
         }
